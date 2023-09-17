@@ -11,9 +11,12 @@ export function absoluteUrl(path: string) {
     const res = await fetch(
         new Request(absoluteUrl('/api/conversation'),{
             method: 'POST',
+            headers: [
+              ["Content-Type", "application/json"]],
             body: JSON.stringify({content})
         })
     )
+    console.log('util api ',content)
     if(res.ok){
         const data = await res.json()
         return data.data
