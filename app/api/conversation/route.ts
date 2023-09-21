@@ -17,16 +17,16 @@ export const POST = async(request: Request) => {
             return new NextResponse("Content required", {status: 400})
         }
 
-        const freeTrial = checkApiLimit();
+        // const freeTrial = checkApiLimit();
 
-        if(!freeTrial){
-            return new NextResponse("Free trial has expired. Please upgrade to Pro", {status: 403})
-        }
+        // if(!freeTrial){
+        //     return new NextResponse("Free trial has expired. Please upgrade to Pro", {status: 403})
+        // }
         
 
-        const analysis = await analyze(content)
+        const analysis = await analyze(JSON.stringify(content))
 
-        await incrementApiLimit();
+        // await incrementApiLimit();
 
         return NextResponse.json({data: analysis})
     }catch (error: any){

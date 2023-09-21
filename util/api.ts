@@ -2,12 +2,16 @@ export function absoluteUrl(path: string) {
     return `${process.env.NEXT_PUBLIC_APP_URL}${path}`
   }
 
-  const createURL = (path) => {
-    return window.location.origin + path
-}
+  export const createNewEntry = async(req: any) => {
+    const mesa = await req;
 
-  export const createNewEntry = async(content: any) => {
-    console.log('util api ',content)
+    const {messages} = mesa;
+    const content = messages;
+    
+    
+
+    // const {messages} = body;
+
     const res = await fetch(
         new Request(absoluteUrl('/api/conversation'),{
             method: 'POST',
@@ -16,9 +20,11 @@ export function absoluteUrl(path: string) {
             body: JSON.stringify({content})
         })
     )
-    console.log('util api ',content)
+
     if(res.ok){
         const data = await res.json()
         return data.data
     }
+
+    
   }
