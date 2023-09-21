@@ -6,6 +6,7 @@ export const LandingHero = () => {
     <div className="text-white font-bold text-center">
       <div className="text-4xl">
         <h1>The best AI tool for...</h1>
+        <h2>testing branch</h2>
       </div>
       <div>
         <Link href={"/dashboard"}>
