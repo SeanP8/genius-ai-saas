@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import TypewritterComponent from "typewriter-effect";
+// import TypewritterComponent from "typewriter-effect";
 import { Button } from "./ui/button";
 import { useAuth } from "@clerk/nextjs";
 
@@ -11,7 +11,7 @@ export const LandingHero = () => {
       <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl space-y-5 font-extrabold">
         <h1>The best AI tool for</h1>
         <div className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-yellow-500">
-          <TypewritterComponent
+          {/* <TypewritterComponent
             options={{
               strings: [
                 "Chatbot.",
@@ -22,7 +22,8 @@ export const LandingHero = () => {
               autoStart: true,
               loop: true,
             }}
-          />
+          /> */}
+          <h2>CHATBOT</h2>
         </div>
       </div>
       <div className="text-sm md:text-xl font-light text-zinc-400">
