@@ -3,19 +3,24 @@ import { analyze } from "@/util/ai";
 import { NextResponse } from "next/server";
 import { checkApiLimit, incrementApiLimit } from "@/util/api-limits";
 
+
+
+
+
+
 export const POST = async(request: Request) => {
 
     try{
-        const {userId} = auth();
-        const {content} = await request.json();
+        // const {userId} = auth();
+        // const {content} = await request.json();
         
-        if(!userId) {
-            return new NextResponse("Unauthorized", {status: 401})
-        }
+        // if(!userId) {
+        //     return new NextResponse("Unauthorized", {status: 401})
+        // }
 
-        if(!content) {
-            return new NextResponse("Content required", {status: 400})
-        }
+        // if(!content) {
+        //     return new NextResponse("Content required", {status: 400})
+        // }
 
         // const freeTrial = checkApiLimit();
 
