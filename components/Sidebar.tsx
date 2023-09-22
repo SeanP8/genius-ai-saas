@@ -33,9 +33,20 @@ const routes = [
     href: "/conversation",
     color: "text-violet-500",
   },
+  {
+    label: "Settings",
+    icon: Settings,
+    href: "/settings",
+  },
 ];
 
-export const Sidebar = ({ apiLimitCount = 0 }: { apiLimitCount: number }) => {
+export const Sidebar = ({
+  apiLimitCount = 0,
+  isPro = false,
+}: {
+  apiLimitCount: number;
+  isPro: boolean;
+}) => {
   const pathname = usePathname();
 
   return (
@@ -71,7 +82,7 @@ export const Sidebar = ({ apiLimitCount = 0 }: { apiLimitCount: number }) => {
         </div>
       </div>
       <Card className="m-3 border-0 rounded-2xl  bg-gradient-to-b from-yellow-400 to-yellow-700">
-        <FreeCounter apiLimitCount={apiLimitCount} />
+        <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro} />
       </Card>
     </div>
   );
